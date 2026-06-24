@@ -39,3 +39,19 @@ Azure SQL Database
 - Incremental ETL Design
 - Azure SQL Integration
 - Data Movement and Orchestration
+
+
+## Project Workflow
+
+1. Source CSV files are stored in Azure Blob Storage.
+2. Azure Data Factory Lookup Activity retrieves the last loaded date from the watermark table.
+3. Copy Activity filters and loads only new records.
+4. Data is inserted into Azure SQL Database.
+5. Watermark table is updated after successful execution.
+
+## Benefits
+
+- Avoids full data reloads
+- Reduces ETL processing time
+- Demonstrates real-world incremental loading pattern
+- Improves scalability for large datasets
